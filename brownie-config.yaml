@@ -23,3 +23,5 @@ networks:
     dai_eth_price_feed: "0x22B58f1EbEDfCA50feF632bD73368b2FdA96D541"
 wallets:
   from_key: ${PRIVATE_KEY}
+settings:
+  gas_limit: "2074044"
