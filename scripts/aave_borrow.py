@@ -31,13 +31,13 @@ def main():
     borrowable_eth, total_debt = get_borrowable_data(lending_pool, account)
 
     # borrowing
-    # get DAI with respect to ETH (DAI/ETH) -> use chainlink pricefeed
+    # get DAI with respect to ETH (DAI/ETH) -> use Chainlink pricefeed
     dai_eth_price = get_asset_price(
         config["networks"][network.show_active()]["dai_eth_price_feed"]
     )
 
     amount_dai_to_borrow = (borrowable_eth * 0.95) / dai_eth_price
-    # can only borrow 95% of ETH in DAI
+    # can only borrow 95% of borrowable ETH in DAI
     print(f"We are borrowing {amount_dai_to_borrow} DAI")
 
     # actually borrowing -> call borrow function in Lendingpools
